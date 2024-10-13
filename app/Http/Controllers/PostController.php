@@ -18,4 +18,10 @@ class PostController extends Controller
         $post->save();
         dd($post);
     }
+
+    public function findAll(){
+        $post =new Post();
+        $posts= $post->all();
+        dd($posts);
+    }
 }
