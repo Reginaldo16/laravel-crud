@@ -19,15 +19,22 @@ class PostController extends Controller
         dd($post);
     }
 
-    public function findAll(){
-        $post =new Post();
-        $posts= $post->all();
-        dd($posts);
+    public function findAll(Request $r){
+        $posts = Post::all();
+        return $posts;
     }
 
-    public function find(){
+    public function find(Request $r){
         $post =new Post();
-        $posts= $post->find(2);
-        dd($posts);
+        $post= $post->find(2);
+        dd($post);
+    }
+
+
+    public function update(){
+        $post = Post::find(1);
+        $post->author = 'Marla';
+        $post->save();
+        return $post;
     }
 }
