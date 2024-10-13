@@ -12,6 +12,9 @@ Route::get('/post/findOne',[PostController::class,'find']);
 
 Route::get('/post/update',[PostController::class,'update']);
 
+Route::get('post/delete', [PostController::class, 'delete']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });

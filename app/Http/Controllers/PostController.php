@@ -19,22 +19,32 @@ class PostController extends Controller
         dd($post);
     }
 
-    public function findAll(Request $r){
+    public function findAll(Request $request){
         $posts = Post::all();
         return $posts;
     }
 
-    public function find(Request $r){
+    public function find(Request $request){
         $post =new Post();
         $post= $post->find(2);
         dd($post);
     }
 
 
-    public function update(Request $r){
+    public function update(Request $request){
         $post = Post::find(1);
         $post->author = 'Marla';
         $post->save();
         return $post;
     }
+
+    public function delete(Request $request) {
+        $post = Post::find(1);
+        if ($post) {
+            $post->delete();
+            return response()->json(['message' => 'Post deleted successfully'], 200);
+        }
+        return response()->json(['message' => 'Post not found'], 404);
+    }
+
 }
