@@ -31,7 +31,7 @@ class PostController extends Controller
     }
 
 
-    public function update(){
+    public function update(Request $r){
         $post = Post::find(1);
         $post->author = 'Marla';
         $post->save();
