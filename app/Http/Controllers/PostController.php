@@ -24,4 +24,10 @@ class PostController extends Controller
         $posts= $post->all();
         dd($posts);
     }
+
+    public function find(){
+        $post =new Post();
+        $posts= $post->find(2);
+        dd($posts);
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/post/create',[PostController::class ,'create']);
 Route::get('/post/find',[PostController::class,'findAll']);
+Route::get('/post/findOne',[PostController::class,'find']);
 
 Route::get('/', function () {
     return view('welcome');
